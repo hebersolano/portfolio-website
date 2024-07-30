@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
 // Components
@@ -11,6 +11,12 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
   variable: "--font-jetBrainsMono",
+});
+
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  variable: "--font-robotoMono",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={jetBrainsMono.variable}>
+      <body className={robotoMono.variable}>
         <Header />
         <StairTransition />
         <PageTransition>{children}</PageTransition>
