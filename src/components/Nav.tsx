@@ -1,37 +1,15 @@
 "use client";
 
+import { navLinks } from "@/app/entities/nav-links";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const links = [
-  {
-    name: "home",
-    path: "/",
-  },
-  {
-    name: "services",
-    path: "/services",
-  },
-  {
-    name: "resume",
-    path: "/resume",
-  },
-  {
-    name: "work",
-    path: "/work",
-  },
-  {
-    name: "contact",
-    path: "/contact",
-  },
-];
 
 function Nav() {
   const pathname = usePathname();
 
   return (
     <nav className="flex gap-8">
-      {links.map((link) => (
+      {navLinks.map((link) => (
         <Link
           href={link.path}
           key={link.name}
