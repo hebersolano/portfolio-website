@@ -1,6 +1,6 @@
 "use client";
 
-import { navLinks } from "@/app/entities/nav-links";
+import { navLinks } from "@/entities/nav-links";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 

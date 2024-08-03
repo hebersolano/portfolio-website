@@ -19,7 +19,7 @@ function Photo() {
         }}
       >
         <motion.div
-          className="w-[298px] h-[298px] xl:w-[498px] mix-blend-lighten"
+          className="absolute w-[298px] h-[298px] xl:w-[498px] mix-blend-lighten"
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
@@ -32,6 +32,7 @@ function Photo() {
         >
           <img src="assets/photo.png" alt="developer photo" className="object-contain" />
         </motion.div>
+
         {/* circle */}
         <motion.svg
           className="w-[300px] xl:w-[506px] h-[300px xl:h-[506px]"
@@ -45,9 +46,18 @@ function Photo() {
             r="250"
             stroke="#00ff99"
             strokeWidth="4"
-            strokeLinecap='round' strokeLinejoin='round' 
-            
-          }
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            initial={{ strokeDasharray: "24 10 0 0" }}
+            animate={{
+              strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
+              rotate: [120, 360],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
           />
         </motion.svg>
       </motion.div>
