@@ -1,25 +1,5 @@
+import socials from "@/entities/social-links";
 import Link from "next/link";
-import path from "path";
-import { FaGithub, FaLinkedin, FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
-
-const socials = [
-  {
-    icon: <FaGithub />,
-    path: "",
-  },
-  {
-    icon: <FaLinkedinIn />,
-    path: "",
-  },
-  {
-    icon: <FaYoutube />,
-    path: "",
-  },
-  {
-    icon: <FaTwitter />,
-    path: "",
-  },
-];
 
 interface SocialProps {
   containerStyles: string;
