@@ -7,7 +7,7 @@ import { BsArrowDownRight } from "react-icons/bs";
 
 function ServicesPage() {
   return (
-    <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
+    <section className="flex min-h-[80vh] flex-col justify-center py-12 xl:py-0">
       <div className="container">
         <motion.div
           initial={{ opacity: 0 }}
@@ -19,32 +19,32 @@ function ServicesPage() {
               ease: "easeIn",
             },
           }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
+          className="grid grid-cols-1 gap-[60px] md:grid-cols-2"
         >
           {services.map((service, i) => (
-            <div key={i} className="flex-1 flex flex-col justify-center gap-6 group">
+            <div
+              key={i}
+              className="group flex flex-1 flex-col justify-center gap-6"
+            >
               {/* top */}
-              <div className="w-full flex justify-between items-center">
-                <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover translate-all duration-500">
+              <div className="flex w-full items-center justify-between">
+                <div className="text-outline group-hover:text-outline-hover translate-all text-5xl font-extrabold text-transparent duration-500">
                   {service.num}
                 </div>
                 <Link
                   href={service.href}
-                  className="w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45"
+                  className="flex h-[70px] w-[70px] items-center justify-center rounded-full bg-white transition-all duration-500 hover:-rotate-45 group-hover:bg-accent"
                 >
                   <BsArrowDownRight className="text-3xl text-primary" />
                 </Link>
               </div>
               {/* title */}
-              <h2
-                className="text-[42px] font-bold leading-no]
-               text-white group-hover:text-accent transition-all duration-500 "
-              >
+              <h2 className="leading-no] text-[42px] font-bold text-white transition-all duration-500 group-hover:text-accent">
                 {service.title}
               </h2>
               {/* description */}
               <p className="text-white/60">{service.description}</p>
-              <div className="border-b border-white/20 w-full"></div>
+              <div className="w-full border-b border-white/20"></div>
             </div>
           ))}
         </motion.div>
