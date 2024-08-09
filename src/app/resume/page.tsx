@@ -126,15 +126,23 @@ function ResumePage() {
             </TabsContent>
 
             {/* about */}
-            <TabsContent value="about" className="w-full">
-              <div>
-                <h3>{about.title}</h3>
-                <p>{about.description}</p>
-                <ul>
+            <TabsContent
+              value="about"
+              className="w-full text-center lg:text-left"
+            >
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-4xl font-bold">{about.title}</h3>
+                <p className="mx-auto max-w-[600px] text-white/60 xl:mx-0">
+                  {about.description}
+                </p>
+                <ul className="mx-auto grid max-w-[620px] grid-cols-1 gap-y-6 lg:mx-0 lg:grid-cols-2">
                   {about.info.map((item, i) => (
-                    <li key={i}>
-                      <span>{item.fieldName}</span>
-                      <span>{item.fieldValue}</span>
+                    <li
+                      key={i}
+                      className="flex items-center justify-center gap-4 lg:justify-start"
+                    >
+                      <span className="text-white/60">{item.fieldName}</span>
+                      <span className="text-xl">{item.fieldValue}</span>
                     </li>
                   ))}
                 </ul>
