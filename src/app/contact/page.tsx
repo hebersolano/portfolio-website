@@ -1,5 +1,5 @@
 "use client";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkedAlt } from "react-icons/fa";
+
 import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import {
@@ -13,24 +13,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/_button-old";
-
-const info = [
-  {
-    icon: <FaPhoneAlt />,
-    title: "Phone",
-    description: "(+40) 321 654 876",
-  },
-  {
-    icon: <FaEnvelope />,
-    title: "Email",
-    description: "youremail@gmail.com",
-  },
-  {
-    icon: <FaMapMarkedAlt />,
-    title: "Address",
-    description: "Code Corner, Tech Town 132435",
-  },
-];
+import { contactInfo } from "@/entities/contact";
 
 function ContactPage() {
   return (
@@ -56,6 +39,7 @@ function ContactPage() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
                 tempore architecto consequuntur ea labore, perferendi.
               </p>
+
               {/* input */}
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <Input
@@ -110,7 +94,7 @@ function ContactPage() {
           {/* info */}
           <div className="order-1 mb-8 flex flex-1 items-center xl:order-none xl:mb-0 xl:justify-end">
             <ul className="flex flex-col gap-10">
-              {info.map((item, i) => (
+              {contactInfo.map((item, i) => (
                 <li key={i} className="flex items-center gap-6">
                   <div className="flex h-[52px] w-[52px] items-center justify-center rounded-md bg-[#27272c] text-accent xl:h-[72px] xl:w-[72px]">
                     <div className="text-[28px]">{item.icon}</div>
