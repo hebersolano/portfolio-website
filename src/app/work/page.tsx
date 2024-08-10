@@ -12,6 +12,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import SliderButtons from "@/components/SliderButtons";
 
 const projects = [
   {
@@ -138,7 +139,7 @@ function WorkPage() {
                 <SwiperSlide key={i} className="w-full">
                   <div className="group relative flex h-[460px] items-center justify-center bg-pink-50/20">
                     {/* overlay */}
-                    <div className=""></div>
+                    <div className="absolute bottom-0 top-0 z-10 h-full w-full bg-black/10"></div>
                     {/* image */}
                     <div className="relative">
                       <img
@@ -150,6 +151,12 @@ function WorkPage() {
                   </div>
                 </SwiperSlide>
               ))}
+              {/* slider buttons  */}
+              <SliderButtons
+                containerStyle="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
+                btnStyle="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+                iconStyle=""
+              />
             </Swiper>
           </div>
         </div>
